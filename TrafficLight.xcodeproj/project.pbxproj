@@ -12,6 +12,7 @@
 		9CDD078029F076F100B3EA8B /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CDD077F29F076F100B3EA8B /* Assets.xcassets */; };
 		9CDD078329F076F100B3EA8B /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 9CDD078229F076F100B3EA8B /* Preview Assets.xcassets */; };
 		9CDD078A29F0779400B3EA8B /* TrafficLightView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD078929F0779300B3EA8B /* TrafficLightView.swift */; };
+		9CDD078E29F1D79B00B3EA8B /* ButtonView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9CDD078D29F1D79B00B3EA8B /* ButtonView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -21,6 +22,7 @@
 		9CDD077F29F076F100B3EA8B /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		9CDD078229F076F100B3EA8B /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		9CDD078929F0779300B3EA8B /* TrafficLightView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrafficLightView.swift; sourceTree = "<group>"; };
+		9CDD078D29F1D79B00B3EA8B /* ButtonView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ButtonView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,6 +58,7 @@
 				9CDD077B29F076F000B3EA8B /* TrafficLightApp.swift */,
 				9CDD077D29F076F000B3EA8B /* ContentView.swift */,
 				9CDD078929F0779300B3EA8B /* TrafficLightView.swift */,
+				9CDD078D29F1D79B00B3EA8B /* ButtonView.swift */,
 				9CDD077F29F076F100B3EA8B /* Assets.xcassets */,
 				9CDD078129F076F100B3EA8B /* Preview Content */,
 			);
@@ -142,6 +145,7 @@
 			files = (
 				9CDD077E29F076F000B3EA8B /* ContentView.swift in Sources */,
 				9CDD078A29F0779400B3EA8B /* TrafficLightView.swift in Sources */,
+				9CDD078E29F1D79B00B3EA8B /* ButtonView.swift in Sources */,
 				9CDD077C29F076F000B3EA8B /* TrafficLightApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
