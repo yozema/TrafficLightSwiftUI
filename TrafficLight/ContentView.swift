@@ -15,7 +15,7 @@ enum Light {
     case on
     case off
     
-    var value: Double {
+    var opacity: Double {
         switch self {
         case .on:
             return 1.0
@@ -27,13 +27,12 @@ enum Light {
 
 struct ContentView: View {
     
-    @State private var buttonText = "START"
+    @State private var currentButtonText = "START"
     @State private var currentLight = TrafficLight.red
 
-    @State private var redLight: Color = .red.opacity(Light.off.value)
-    @State private var yellowLight: Color = .yellow.opacity(Light.off.value)
-    @State private var greenLight: Color = .green.opacity(Light.off.value)
-    
+    @State private var redLight: Color = .red.opacity(Light.off.opacity)
+    @State private var yellowLight: Color = .yellow.opacity(Light.off.opacity)
+    @State private var greenLight: Color = .green.opacity(Light.off.opacity)
     
     var body: some View {
         VStack {
@@ -46,27 +45,27 @@ struct ContentView: View {
             }
             .padding(.top, 50)
             
-            ButtonView(buttonText: buttonText, action: lightButtonTapped)
+            ButtonView(buttonText: currentButtonText, action: lightButtonTapped)
         }
     }
     
     private func lightButtonTapped() {
-        if buttonText == "START" {
-            buttonText = "NEXT"
+        if currentButtonText == "START" {
+            currentButtonText = "NEXT"
         }
         
         switch currentLight {
         case .red:
-            greenLight = .green.opacity(Light.off.value)
-            redLight = .red.opacity(Light.on.value)
+            greenLight = .green.opacity(Light.off.opacity)
+            redLight = .red.opacity(Light.on.opacity)
             currentLight = .yellow
         case .yellow:
-            redLight = .red.opacity(Light.off.value)
-            yellowLight = .yellow.opacity(Light.on.value)
+            redLight = .red.opacity(Light.off.opacity)
+            yellowLight = .yellow.opacity(Light.on.opacity)
             currentLight = .green
         case .green:
-            yellowLight = .yellow.opacity(Light.off.value)
-            greenLight = .green.opacity(Light.on.value)
+            yellowLight = .yellow.opacity(Light.off.opacity)
+            greenLight = .green.opacity(Light.on.opacity)
             currentLight = .red
         }
     }
