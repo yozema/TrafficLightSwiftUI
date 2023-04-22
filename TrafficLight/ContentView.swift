@@ -30,16 +30,16 @@ struct ContentView: View {
     @State private var currentButtonText = "START"
     @State private var currentLight = TrafficLight.red
 
-    @State private var redLight: Color = .red.opacity(Light.off.opacity)
-    @State private var yellowLight: Color = .yellow.opacity(Light.off.opacity)
-    @State private var greenLight: Color = .green.opacity(Light.off.opacity)
+    @State private var red: Color = .red.opacity(Light.off.opacity)
+    @State private var yellow: Color = .yellow.opacity(Light.off.opacity)
+    @State private var green: Color = .green.opacity(Light.off.opacity)
     
     var body: some View {
         VStack {
             VStack {
-                TrafficLightView(color: redLight)
-                TrafficLightView(color: yellowLight)
-                TrafficLightView(color: greenLight)
+                TrafficLightView(color: red)
+                TrafficLightView(color: yellow)
+                TrafficLightView(color: green)
                 
                 Spacer()
             }
@@ -56,16 +56,16 @@ struct ContentView: View {
         
         switch currentLight {
         case .red:
-            greenLight = .green.opacity(Light.off.opacity)
-            redLight = .red.opacity(Light.on.opacity)
+            green = .green.opacity(Light.off.opacity)
+            red = .red.opacity(Light.on.opacity)
             currentLight = .yellow
         case .yellow:
-            redLight = .red.opacity(Light.off.opacity)
-            yellowLight = .yellow.opacity(Light.on.opacity)
+            red = .red.opacity(Light.off.opacity)
+            yellow = .yellow.opacity(Light.on.opacity)
             currentLight = .green
         case .green:
-            yellowLight = .yellow.opacity(Light.off.opacity)
-            greenLight = .green.opacity(Light.on.opacity)
+            yellow = .yellow.opacity(Light.off.opacity)
+            green = .green.opacity(Light.on.opacity)
             currentLight = .red
         }
     }
