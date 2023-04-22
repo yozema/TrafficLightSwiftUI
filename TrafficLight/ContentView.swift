@@ -15,7 +15,7 @@ enum Light {
     case on
     case off
     
-    var opacity: Double {
+    var state: Double {
         switch self {
         case .on:
             return 1.0
@@ -30,9 +30,9 @@ struct ContentView: View {
     @State private var currentButtonText = "START"
     @State private var currentLight = TrafficLight.red
 
-    @State private var redLightState = Light.off.opacity
-    @State private var yellowLightState = Light.off.opacity
-    @State private var greenLightState = Light.off.opacity
+    @State private var redLightState = Light.off.state
+    @State private var yellowLightState = Light.off.state
+    @State private var greenLightState = Light.off.state
     
     var body: some View {
         VStack {
@@ -56,16 +56,16 @@ struct ContentView: View {
         
         switch currentLight {
         case .red:
-            greenLightState = Light.off.opacity
-            redLightState = Light.on.opacity
+            greenLightState = Light.off.state
+            redLightState = Light.on.state
             currentLight = .yellow
         case .yellow:
-            redLightState = Light.off.opacity
-            yellowLightState = Light.on.opacity
+            redLightState = Light.off.state
+            yellowLightState = Light.on.state
             currentLight = .green
         case .green:
-            yellowLightState = Light.off.opacity
-            greenLightState = Light.on.opacity
+            yellowLightState = Light.off.state
+            greenLightState = Light.on.state
             currentLight = .red
         }
     }
