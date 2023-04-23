@@ -20,7 +20,11 @@ struct ButtonView: View {
         }
         .background(.blue)
         .clipShape(RoundedRectangle(cornerRadius: 20, style: .continuous))
-        .overlay(RoundedRectangle(cornerRadius: 20, style: .continuous).stroke(Color.white, lineWidth: 4))
+        .overlay(
+            RoundedRectangle(
+                cornerRadius: 20,
+                style: .continuous).stroke(Color.white, lineWidth: 4)
+        )
         .shadow(radius: 20)
         .padding(.bottom, 50)
     }

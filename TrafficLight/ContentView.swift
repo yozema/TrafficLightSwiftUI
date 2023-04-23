@@ -8,38 +8,29 @@
 import SwiftUI
 
 enum TrafficLight {
-    case red, yellow, green
-}
-
-enum Light {
-    case on
-    case off
-    
-    var state: Double {
-        switch self {
-        case .on:
-            return 1.0
-        case .off:
-            return 0.3
-        }
-    }
+    case off, red, yellow, green
 }
 
 struct ContentView: View {
     
+    private let lightOn = 1.0
+    private let lightOff = 0.3
+    
     @State private var currentButtonText = "START"
-    @State private var currentLight = TrafficLight.red
-
-    @State private var redLightState = Light.off.state
-    @State private var yellowLightState = Light.off.state
-    @State private var greenLightState = Light.off.state
+    @State private var currentLight = TrafficLight.off
     
     var body: some View {
         VStack {
             VStack {
-                TrafficLightView(color: .red.opacity(redLightState))
-                TrafficLightView(color: .yellow.opacity(yellowLightState))
-                TrafficLightView(color: .green.opacity(greenLightState))
+                TrafficLightView(
+                    color: .red,
+                    opacity: currentLight == .red ? lightOn : lightOff)
+                TrafficLightView(
+                    color: .yellow,
+                    opacity: currentLight == .yellow ? lightOn : lightOff)
+                TrafficLightView(
+                    color: .green,
+                    opacity: currentLight == .green ? lightOn : lightOff)
                 
                 Spacer()
             }
@@ -55,18 +46,10 @@ struct ContentView: View {
         }
         
         switch currentLight {
-        case .red:
-            greenLightState = Light.off.state
-            redLightState = Light.on.state
-            currentLight = .yellow
-        case .yellow:
-            redLightState = Light.off.state
-            yellowLightState = Light.on.state
-            currentLight = .green
-        case .green:
-            yellowLightState = Light.off.state
-            greenLightState = Light.on.state
-            currentLight = .red
+        case .off: currentLight = .red
+        case .red: currentLight = .yellow
+        case .yellow: currentLight = .green
+        case .green: currentLight = .red
         }
     }
 }
